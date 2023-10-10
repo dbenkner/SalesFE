@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<div class="titleContainer">
+    <h1>Create a new customer</h1>
+</div>
+<div class="tableContainer">
+    <table class="table table-dark table-striped">
+        <tr>
+            <td>ID</td>
+            <td><input [(ngModel)]="customer.id" id="id" value="0" readonly></td>
+        </tr>
+        <tr>
+            <td>CODE</td>
+            <td><input [(ngModel)]="customer.code" id="upc"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="customer.name" id="name"></td>
+        </tr>
+        <tr>
+            <td>Sales</td>
+            <td><input [(ngModel)]="customer.sales" id="price" type="number"></td>
+        </tr>
+        <tr>
+            <td>Active?</td>
+            <td><input [(ngModel)]="customer.active" id="active" type="checkbox" checked></td>
+        </tr>
+    </table>
+</div>
+<div>
+<button id="newCust" (click)="clicked()">Create New Customer</button>
+</div>

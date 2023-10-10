@@ -1,0 +1,28 @@
+ul {
+    display: inline-flex;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    list-style-type: none;
+}
+nav {
+    background-color:rgb(61, 69, 77);
+    margin:0px;
+    padding:0px;
+}
+li {
+    margin: 0px 10px;
+}
+a {
+    color:rgb(177, 191, 202);
+    text-decoration: none;
+    font-size: 1.25em;
+}
+a:hover {
+    font-weight: bold;
+}
+a:active {
+
+}

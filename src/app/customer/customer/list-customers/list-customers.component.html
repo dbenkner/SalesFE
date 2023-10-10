@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<div class="titleContainer">
+    <h1>Customers List</h1>
+</div>
+
+<div class="tableContainer">
+    <table class ="table table-dark table-striped">
+        <thead>
+            <td>Id</td>
+            <td>Code</td>
+            <td>Name</td>
+            <td>Sales</td>
+            <td>Active</td>
+            <td>Action</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of customers | searchCustomer:substr">
+                <td>{{c.id}}</td>
+                <td>{{c.code}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.sales}}</td>
+                <td>{{c.active | bool:locale}}</td>
+                <td><a routerLink="/customer/{{c.id}}">Details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btnContainer">
+     <button routerLink="/customer/new" class="btn btn-light">Add new customer</button>
+</div>
+<div class="searchContainer"><input [(ngModel)]="substr" placeholder="Search"></div>

@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div class="titleContainer">
+    <h1>Items List</h1>
+</div>
+<div class="tableContainer">
+    <table class ="table table-dark table-striped">
+        <thead>
+            <td>Id</td>
+            <td>UPC</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Active</td>
+            <td>Action</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of items">
+                <td>{{i.id}}</td>
+                <td>{{i.upc}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.active? "YES": "NO"}}</td>
+                <td>Feature to be added</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btnContainer">
+    <button class="btn btn-light">Add New Customer</button>
+</div>

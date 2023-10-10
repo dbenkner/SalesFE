@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<div class="tableContainer">
+    <table class="table table-dark table-striped">
+        <tr>
+            <td>ID</td>
+            <td>{{customer.id}}</td>
+        </tr>
+        <tr>
+            <td>Customer Code</td>
+            <td>{{customer.code}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{customer.name}}</td>
+        </tr>
+        <tr>
+            <td>Sales</td>
+            <td>{{customer.sales}}</td>
+        </tr>
+        <tr>
+            <td>Active?</td>
+            <td>{{customer.active? "YES": "NO"}}</td>
+        </tr>
+    </table>
+</div>
+<div>
+<button>Delete Customer</button>
+</div>
