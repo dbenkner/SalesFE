@@ -21,7 +21,7 @@
                 <td>{{c.name}}</td>
                 <td>{{c.sales}}</td>
                 <td>{{c.active | bool:locale}}</td>
-                <td><a routerLink="/customer/{{c.id}}">Details</a></td>
+                <td><a routerLink="/customer/{{c.id}}">Details</a> | <a routerLink="/customer/edit/{{c.id}}">Edit</a></td>
             </tr>
         </tbody>
     </table>

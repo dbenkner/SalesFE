@@ -20,4 +20,10 @@ export class CustomerService {
   create(cust:Customer): Observable<Customer> {
     return this.http.post(`${this.url}`, cust) as Observable<Customer>;
   } 
+  edit(cust:Customer, id:number): Observable<any> {
+    return this.http.put(`${this.url}/${id}`, cust) as  Observable<any>;
+  }
+  delete(id:number): Observable<any> {
+  return this.http.delete(`${this.url}/${id}`) as Observable<any>;
+  }
 }

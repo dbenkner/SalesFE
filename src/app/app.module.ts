@@ -15,6 +15,7 @@ import { DetailCustomerComponent } from './customer/customer/detail-customer/det
 import { Router } from '@angular/router';
 import { BoolPipe } from './misc/bool.pipe';
 import { SearchCustomerPipe } from './customer/search-customer.pipe';
+import { EditCustomerComponent } from './customer/customer/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SearchCustomerPipe } from './customer/search-customer.pipe';
     DetailCustomerComponent,
     BoolPipe,
     SearchCustomerPipe,
+    EditCustomerComponent,
   ],
   imports: [
     BrowserModule,

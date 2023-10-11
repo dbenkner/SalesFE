@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<div class="titleContainer">
+    <h1>Create a new customer</h1>
+</div>
+<div class="tableContainer">
+    <table class="table table-dark table-striped">
+        <tr>
+            <td>ID</td>
+            <td><input [(ngModel)]="customer.id" id="id" value="{{customer.id}}" readonly></td>
+        </tr>
+        <tr>
+            <td>CODE</td>
+            <td><input [(ngModel)]="customer.code" id="upc" value="{{customer.code}}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="customer.name" id="name" value="{{customer.name}}"></td>
+        </tr>
+        <tr>
+            <td>Sales</td>
+            <td><input [(ngModel)]="customer.sales" id="price" type="number"value="{{customer.sales}}"></td>
+        </tr>
+        <tr>
+            <td>Active?</td>
+            <td><input [(ngModel)]="customer.active" id="active" type="checkbox" value="{{customer.active}}"></td>
+        </tr>
+    </table>
+</div>
+<div>
+<button id="newCust" (click)="clicked()">Save Changes</button>
+</div>
+<p>{{message}}</p> 

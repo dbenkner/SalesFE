@@ -1,25 +1,24 @@
 import { Component } from '@angular/core';
 import { Customer } from '../../customer.class';
 import { CustomerService } from '../../customer.service';
-import { ActivatedRoute, Route, RouterLink, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-detail-customer',
-  templateUrl: './detail-customer.component.html',
-  styleUrls: ['./detail-customer.component.css']
+  selector: 'app-edit-customer',
+  templateUrl: './edit-customer.component.html',
+  styleUrls: ['./edit-customer.component.css']
 })
-
-export class DetailCustomerComponent {
-  customer :Customer = new Customer();
-  id = 0;
-
-  constructor (
+export class EditCustomerComponent {
+  customer: Customer = new Customer();
+  id:number = 0;
+  message:string = "";
+  
+  constructor(
     private custSvc: CustomerService,
     private route: ActivatedRoute,
     private router: RouterLink
   ){}
-  ngOnInit() 
-  {
+  ngOnInit(){
     this.route.params.subscribe(params => {
       this.id = params['id'];
     });
@@ -33,15 +32,16 @@ export class DetailCustomerComponent {
       }
     });
   }
-  deleteButton(){
-    this.custSvc.delete(this.id).subscribe({
+  clicked(){
+    this.message = "";
+    this.custSvc.edit(this.customer, this.id).subscribe({
       next: (res) => {
         console.log(res);
-        
+        this.message = "Updated Sucessful!";
       },
-      error: err => {
+      error: (err) => {
         console.error(err);
       }
-    });
+    })
   }
 }
