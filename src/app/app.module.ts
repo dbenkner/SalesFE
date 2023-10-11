@@ -16,6 +16,11 @@ import { Router } from '@angular/router';
 import { BoolPipe } from './misc/bool.pipe';
 import { SearchCustomerPipe } from './customer/search-customer.pipe';
 import { EditCustomerComponent } from './customer/customer/edit-customer/edit-customer.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
+import { ListEmployeesComponent } from './employee/employee/list-employees/list-employees.component';
+import { DetailEmployeeComponent } from './employee/employee/detail-employee/detail-employee.component';
+import { NewEmployeeComponent } from './employee/employee/new-employee/new-employee.component';
+import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { EditCustomerComponent } from './customer/customer/edit-customer/edit-cu
     BoolPipe,
     SearchCustomerPipe,
     EditCustomerComponent,
+    EmployeeComponent,
+    ListEmployeesComponent,
+    DetailEmployeeComponent,
+    NewEmployeeComponent,
+    EditEmployeeComponent,
   ],
   imports: [
     BrowserModule,

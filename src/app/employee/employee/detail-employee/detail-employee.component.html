@@ -1,0 +1,20 @@
+<app-menu></app-menu>
+<div class="tableContainer">
+<table>
+    <tr>
+        <td>Id</td>
+        <td>{{employee.id}}</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>{{employee.email}}</td>
+    </tr>
+    <tr>
+        <td>Active?</td>
+        <td>{{employee.active? "YES": "NO"}}</td>
+    </tr>
+</table>
+</div>
+<div class="buttonContainer">
+    <button (click)="deleteButton()">Delete Employee</button>
+</div>

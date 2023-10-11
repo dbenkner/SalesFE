@@ -6,15 +6,25 @@ import { ListCustomersComponent } from './customer/customer/list-customers/list-
 import { NewCustomerComponent } from './customer/customer/new-customer/new-customer.component';
 import { DetailCustomerComponent } from './customer/customer/detail-customer/detail-customer.component';
 import { EditCustomerComponent } from './customer/customer/edit-customer/edit-customer.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
+import { ListEmployeesComponent } from './employee/employee/list-employees/list-employees.component';
+import { DetailEmployeeComponent } from './employee/employee/detail-employee/detail-employee.component';
+import { NewEmployeeComponent } from './employee/employee/new-employee/new-employee.component';
+import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-employee.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch:'full'},
   {path: 'home', component:HomeComponent},
   {path: 'customer', component:CustomerComponent},
+  {path: 'employee', component:EmployeeComponent},
+  {path: 'employee/list', component:ListEmployeesComponent},
+  {path: 'employee/new', component:NewEmployeeComponent},
+  {path: 'employee/:id', component:DetailEmployeeComponent},
   {path: 'customer/list', component:ListCustomersComponent},
   {path: 'customer/new', component:NewCustomerComponent},
   {path: 'customer/:id', component:DetailCustomerComponent},
-  {path: 'customer/edit/:id', component:EditCustomerComponent}
+  {path: 'customer/edit/:id', component:EditCustomerComponent},
+  {path: 'employee/edit/:id', component:EditEmployeeComponent}
 ];
 
 @NgModule({

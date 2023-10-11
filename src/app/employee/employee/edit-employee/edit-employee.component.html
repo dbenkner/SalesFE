@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<div class="tableContainer">
+<table>
+    <tr>
+        <td>Id</td>
+        <td><input [(ngModel)]="employee.id" value="{{employee.id}}" readonly></td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td><input [(ngModel)]="employee.email" value="{{employee.email}}"></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input [(ngModel)]="employee.password" value="{{employee.password}}" type="password"></td>
+    </tr>
+    <tr>
+        <td>Active?</td>
+        <td><input [(ngModel)]="employee.active "value="{{employee.active}}"  type="checkbox" checked></td>
+    </tr>
+</table>
+</div>
+<div class="buttonContainer">
+    <button (click)="saveEmployee()">Save Employee</button>
+</div>
+<div><p>{{message}}</p></div>

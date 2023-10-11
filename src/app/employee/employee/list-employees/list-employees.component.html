@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<div><a routerLink="/employee/new">Add New Employee</a></div>
+<div class="tableContainer">
+    <table class="table-dark">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Active</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.active? "YES": "NO"}}</td>
+                <td><a routerLink="/employee/{{emp.id}}">Details</a> | <a routerLink="/employee/edit/{{emp.id}}">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
