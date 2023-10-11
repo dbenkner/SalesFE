@@ -26,4 +26,7 @@ export class EmployeeService {
   delete(id:number): Observable<any>{
     return this.http.delete(`${this.url}/${id}`) as Observable<any>;
   }
+  employeeLogIn(email:string, pw:string): Observable<Employee>{
+    return this.http.get(`${this.url}/${email}/${pw}`) as Observable<Employee>;
+  }
 }

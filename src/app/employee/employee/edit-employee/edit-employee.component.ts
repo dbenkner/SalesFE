@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Employee } from '../../employee-class';
 import { EmployeeService } from '../../employee.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-edit-employee',
@@ -15,7 +15,8 @@ export class EditEmployeeComponent {
   constructor(
     private empSvc: EmployeeService,
     private route: ActivatedRoute,
-    private router: RouterLink
+    private routerLink: RouterLink,
+    private router: Router
   ){}
   ngOnInit(){
     this.route.params.subscribe({
@@ -25,7 +26,6 @@ export class EditEmployeeComponent {
     });
     this.empSvc.detail(this.id).subscribe({
       next: (res) => {
-        console.log(res);
         this.employee = res as Employee;
       },
       error: (err) => {
@@ -36,7 +36,6 @@ export class EditEmployeeComponent {
   saveEmployee(){
     this.empSvc.edit(this.id,this.employee).subscribe({
       next: (res) => {
-        console.log(res);
         this.message = "Update Success!";
       },
       error: (err) => {

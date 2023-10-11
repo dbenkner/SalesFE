@@ -13,7 +13,7 @@ export class NewCustomerComponent {
 
   constructor (
     private custSvc: CustomerService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {}
   
   clicked():void {

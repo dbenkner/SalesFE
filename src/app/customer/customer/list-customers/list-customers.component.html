@@ -3,19 +3,19 @@
 <div class="titleContainer">
     <h1>Customers List</h1>
 </div>
-
+<span>{{employee.email}}</span>
 <div class="tableContainer">
     <table class ="table table-dark table-striped">
-        <thead>
-            <td>Id</td>
-            <td>Code</td>
-            <td>Name</td>
-            <td>Sales</td>
-            <td>Active</td>
-            <td>Action</td>
+        <thead> 
+            <th><button (click)="sortOrder('id')" class="btn btn-link">Id</button></th>
+            <th><button (click)="sortOrder('code')" class="btn btn-link">Code</button></th>
+            <th><button (click)="sortOrder('name')" class="btn btn-link">Name</button></th>
+            <th><button (click)="sortOrder('sales')" class="btn btn-link">Sales</button></th>
+            <th><button (click)="sortOrder('active')" class="btn btn-link">Active</button></th>
+            <th>Action</th>
         </thead>
         <tbody>
-            <tr *ngFor="let c of customers | searchCustomer:substr">
+            <tr *ngFor="let c of customers | searchCustomer:substr | sort:sortCol:sortAsc" >
                 <td>{{c.id}}</td>
                 <td>{{c.code}}</td>
                 <td>{{c.name}}</td>

@@ -21,6 +21,9 @@ import { ListEmployeesComponent } from './employee/employee/list-employees/list-
 import { DetailEmployeeComponent } from './employee/employee/detail-employee/detail-employee.component';
 import { NewEmployeeComponent } from './employee/employee/new-employee/new-employee.component';
 import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-employee.component';
+import { SortPipe } from './misc/sort.pipe';
+import { EmployeeLoginComponent } from './employee/employee/employee-login/employee-login.component';
+import { LoginService } from './employee/login.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-em
     DetailEmployeeComponent,
     NewEmployeeComponent,
     EditEmployeeComponent,
+    SortPipe,
+    EmployeeLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,6 @@ import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-em
     HttpClientModule
   ],
   providers: [Router],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, LoginService]
 })
 export class AppModule { }

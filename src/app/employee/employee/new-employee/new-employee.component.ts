@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Employee } from '../../employee-class';
 import { EmployeeService } from '../../employee.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-new-employee',
@@ -14,7 +14,8 @@ export class NewEmployeeComponent {
   constructor(
     private empSvc: EmployeeService,
     private route: ActivatedRoute,
-    private router: RouterLink
+    private routerLink: RouterLink,
+    private router: Router
   ) {}
   ngOnInit(
 
@@ -23,8 +24,8 @@ export class NewEmployeeComponent {
   saveEmployee(){
     this.empSvc.create(this.employee).subscribe({
       next: (res) => {
-        console.log(res);
-        this.message = "Created New Employee!"
+        this.message = "Created New Employee!";
+        this.router.navigate([`/employee/${res.id}`]);
       },
       error: (err) => {
         console.error(err);

@@ -14,7 +14,8 @@ export class DetailEmployeeComponent {
   constructor (
     private empSvc:EmployeeService,
     private route: ActivatedRoute,
-    private router: RouterLink
+    private routerLink: RouterLink,
+    private router: Router
   ) {}
 
   ngOnInit(){
@@ -22,12 +23,10 @@ export class DetailEmployeeComponent {
       next:(paramas) => {
         console.log(paramas['id']);
         this.id = paramas[`id`]
-        console.log(this.id);
       }
     });
     this.empSvc.detail(this.id).subscribe({
       next: (res) => {
-        console.log(res);
         this.employee = res as Employee;
       },
       error: (err) => {
@@ -39,6 +38,7 @@ export class DetailEmployeeComponent {
     this.empSvc.delete(this.id).subscribe({
       next: (res) => {
         console.log(res);
+        this.router.navigate(['/employee/list']);
       },
       error (err) {
         console.error(err);

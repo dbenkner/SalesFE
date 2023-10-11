@@ -13,11 +13,21 @@ body {
     text-align: center;
 }
 .btnContainer {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 .wrapper {
-    width: 80%;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.smTableContainer {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-radius: 5px;
 }

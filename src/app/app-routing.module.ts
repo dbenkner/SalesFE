@@ -11,6 +11,7 @@ import { ListEmployeesComponent } from './employee/employee/list-employees/list-
 import { DetailEmployeeComponent } from './employee/employee/detail-employee/detail-employee.component';
 import { NewEmployeeComponent } from './employee/employee/new-employee/new-employee.component';
 import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-employee.component';
+import { EmployeeLoginComponent } from './employee/employee/employee-login/employee-login.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch:'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'customer/new', component:NewCustomerComponent},
   {path: 'customer/:id', component:DetailCustomerComponent},
   {path: 'customer/edit/:id', component:EditCustomerComponent},
-  {path: 'employee/edit/:id', component:EditEmployeeComponent}
+  {path: 'employee/edit/:id', component:EditEmployeeComponent},
+  {path: 'login', component:EmployeeLoginComponent}
 ];
 
 @NgModule({
