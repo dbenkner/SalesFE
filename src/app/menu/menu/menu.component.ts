@@ -15,8 +15,9 @@ export class MenuComponent {
     new Menu("ABOUT", "/about"),
     new Menu("CUSTOMERS", "/customer/list"),
     new Menu("EMPLOYEES", "/employee/list"),
-    new Menu("LOGIN", "/login"),
-    new Menu("ORDER", "/order")
+    new Menu("ORDER", "/order"),
+    new Menu("ITEMS", "/item"),
+    new Menu("LOGIN", "/login")
   ];
   loggedIn!: Employee;
   constructor(

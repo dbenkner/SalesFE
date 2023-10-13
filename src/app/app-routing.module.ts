@@ -18,6 +18,8 @@ import { EditOrderComponent } from './order/order/edit-order/edit-order.componen
 import { DetailOrderComponent } from './order/order/detail-order/detail-order.component';
 import { OrderLinesComponent } from './order/order/order-lines/order-lines.component';
 import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
+import { ItemsListComponent } from './item/item/items-list/items-list.component';
+import { NewItemComponent } from './item/item/new-item/new-item.component';
 
 
 const routes: Routes = [
@@ -38,6 +40,8 @@ const routes: Routes = [
   {path: 'order/edit/:id', component:EditOrderComponent},
   {path: 'order/:id', component:DetailOrderComponent},
   {path: 'order/line/:id', component:OrderLinesComponent},
+  {path: 'item', component:ItemsListComponent},
+  {path: 'item/new', component:NewItemComponent},
   //orderlines
   {path: 'orderline/add/:oid', component:OrderlineCreateComponent}, //pass in order ID NOT olID
   {path: 'login', component:EmployeeLoginComponent}

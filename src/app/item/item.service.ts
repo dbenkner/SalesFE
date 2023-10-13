@@ -14,4 +14,7 @@ export class ItemService {
   list(): Observable<Item[]> {
     return this.http.get(this.url) as Observable<Item[]>;
   }
+  newItem(item:Item): Observable<Item>{
+    return this.http.post(this.url, item) as Observable<Item>;
+  }
 }

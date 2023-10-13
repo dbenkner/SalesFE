@@ -12,12 +12,14 @@ import { GlobalService } from 'src/app/global.service';
 export class ListOrdersComponent {
   orders!: Order[]
   substr: string = "";
+  sortCol: string = "";
+  sortAsc: boolean = true;
   constructor (
     private orderSvc: OrderService,
     private custSvc: CustomerService,
     private globalSvc: GlobalService,
   ){}
-  ngOnInit() {
+  ngOnInit():void {
     this.orderSvc.list().subscribe({
       next: (res) => {
         console.log(res);
@@ -27,5 +29,12 @@ export class ListOrdersComponent {
         console.error(err);
       }
     });
+  }
+  sortedOrder(col:string):void{
+    if(col === this.sortCol) {
+      this.sortAsc != this.sortAsc;
+    }
+    this.sortCol = col;
+    this.sortAsc = true;
   }
 }
