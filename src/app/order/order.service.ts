@@ -30,6 +30,9 @@ export class OrderService {
   okOrder(order: Order): Observable<any>{
     return this.http.put(`${this.url}/ok/${order.id}`, order) as Observable<any>;
   }
+  closeOrder(order: Order): Observable<any>{
+    return this.http.put(`${this.url}/close/${order.id}`, order) as Observable<any>;
+  }
   deleteOrder(id: number): Observable<any>{
     return this.http.delete(`${this.url}/${id}`) as Observable<any>;
   }

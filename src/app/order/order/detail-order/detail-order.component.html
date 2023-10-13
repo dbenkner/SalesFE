@@ -1,7 +1,8 @@
 <app-menu></app-menu>
 <router-outlet></router-outlet>
-<div>
-    <table>
+<div class="headerContainer"><h2>Order Details</h2></div>
+<div class="tableContainer">
+    <table class="table table-dark table-sm">
         <tbody>
             <tr>
                 <td>ID</td>
@@ -29,5 +30,5 @@
             </tr>
         </tbody>
     </table>
-    <button (click)="deleteOrder()">Delete</button>
+    <div class="btnContainer"><button class="btn btn-dark"(click)="deleteOrder()">Delete</button></div>
 </div>

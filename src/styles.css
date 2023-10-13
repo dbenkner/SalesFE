@@ -7,3 +7,28 @@ body {
 .messageContainer {
     text-align: center;
 }
+a {
+    text-decoration: none;
+    color: azure;
+}
+a:hover {
+    text-decoration: none;
+    color:gray;
+    text-emphasis: bolder;
+}
+.headerContainer {
+    text-align: center;
+}
+.smMenuContainer {
+    width: 330px;
+    margin: auto;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 10px;
+}
+.header {
+    text-align: center;
+}
+.btnContainer {
+    margin-left: 70%;
+}

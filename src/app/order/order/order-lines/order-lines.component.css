@@ -1,0 +1,14 @@
+button {
+    color:white;
+    text-decoration: none;
+    margin: 0px 10px;
+    padding:0;
+    border-style: none;
+    background-color: transparent;
+}
+th {
+    text-align: center;
+}
+td {
+    text-align: center;
+}

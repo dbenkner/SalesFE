@@ -3,6 +3,7 @@ import { GlobalService } from 'src/app/global.service';
 import { OrderService } from '../../order.service';
 import { ActivatedRoute } from '@angular/router';
 import { Order } from '../../order.class';
+import { OrderlineService } from 'src/app/orderline/orderline.service';
 
 @Component({
   selector: 'app-order-lines',
@@ -11,13 +12,16 @@ import { Order } from '../../order.class';
 })
 export class OrderLinesComponent {
   order!: Order;
+  delVal: boolean = false;
   constructor(
     private globalSvc: GlobalService,
     private orderSvc: OrderService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private olSvc: OrderlineService
   ){}
   refresh(): void {
     let id = +this.route.snapshot.params['id'];
+    this.delVal = false;
     this.orderSvc.listById(id).subscribe({
       next: (res) => {
         this.order = res;
@@ -50,7 +54,32 @@ export class OrderLinesComponent {
       }
     });
   }
+  closeOrder():void{
+    this.orderSvc.closeOrder(this.order).subscribe({
+      next: (res) => {
+        console.debug("Order is OK");
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
   ngOnInit():void {
     this.refresh();
+  }
+  delBtn():void {
+    this.delVal = !this.delVal;
+  }
+  deleteOl(id:number):void {
+    this.olSvc.deleteOl(id).subscribe({
+      next: (res) => {
+        console.debug(res);
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 }

@@ -20,6 +20,9 @@ import { OrderLinesComponent } from './order/order/order-lines/order-lines.compo
 import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
 import { ItemsListComponent } from './item/item/items-list/items-list.component';
 import { NewItemComponent } from './item/item/new-item/new-item.component';
+import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
+import { EditItemComponent } from './item/item/edit-item/edit-item.component';
+import { DetailItemComponent } from './item/item/detail-item/detail-item.component';
 
 
 const routes: Routes = [
@@ -42,8 +45,11 @@ const routes: Routes = [
   {path: 'order/line/:id', component:OrderLinesComponent},
   {path: 'item', component:ItemsListComponent},
   {path: 'item/new', component:NewItemComponent},
+  {path: 'item/edit/:id', component:EditItemComponent},
+  {path: 'item/:id', component:DetailItemComponent},
   //orderlines
   {path: 'orderline/add/:oid', component:OrderlineCreateComponent}, //pass in order ID NOT olID
+  {path: 'orderline/edit/:id', component:OrderlineEditComponent},
   {path: 'login', component:EmployeeLoginComponent}
 ];
 

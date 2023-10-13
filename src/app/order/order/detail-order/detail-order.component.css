@@ -1,0 +1,12 @@
+.tableContainer{
+    width:330px;
+    margin:auto;
+    border-style: solid;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+.btnContainer {
+    padding-left: 75%;
+    padding-bottom: 20px;
+}
+

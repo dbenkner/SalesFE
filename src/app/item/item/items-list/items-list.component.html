@@ -18,13 +18,10 @@
                 <td>{{i.id}}</td>
                 <td>{{i.upc}}</td>
                 <td>{{i.name}}</td>
-                <td>{{i.price}}</td>
+                <td>{{i.price | currency}}</td>
                 <td>{{i.active? "YES": "NO"}}</td>
-                <td>Feature to be added</td>
+                <td><a routerLink="/item/{{i.id}}">Details</a> | <a routerLink="/item/edit/{{i.id}}">Edit</a></td>
             </tr>
         </tbody>
     </table>
-</div>
-<div class="btnContainer">
-    <button class="btn btn-light">Add New Customer</button>
 </div>

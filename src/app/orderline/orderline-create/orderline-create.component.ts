@@ -14,7 +14,7 @@ import { OrderlineService } from '../orderline.service';
 })
 export class OrderlineCreateComponent {
   orderline: Orderline = new Orderline();
-  items!: Item[];
+  items: Item[] = [];
   message: string ="";
 
   constructor(
@@ -26,12 +26,15 @@ export class OrderlineCreateComponent {
     private olSvc: OrderlineService
   ) {}
   ngOnInit() :void {
+    /**
+     * Needed to read the path variable to pull the foreign key for the order ID!
+     */
     this.orderline.orderId = +this.rotue.snapshot.params["oid"];
     this.message = "";
     this.itemSvc.list().subscribe({
       next: (res) => {
         this.items = res;
-        console.log(res);
+        console.debug(res);
       },
       error: (err) => {
         console.error(err);
@@ -39,11 +42,12 @@ export class OrderlineCreateComponent {
       }
     });
   }
-  save (){
+  save ():void {
     this.olSvc.create(this.orderline).subscribe({
       next:(res) => {
         console.log(res);
         this.message = `Added lineitem`;
+        this.router.navigate([`/order/line/${this.orderline.orderId}`]);
       },
       error: (err) => {
         console.error(err);

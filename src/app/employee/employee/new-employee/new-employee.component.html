@@ -1,25 +1,28 @@
 <app-menu></app-menu>
-<div class="tableContainer">
-<table>
-    <tr>
-        <td>Id</td>
-        <td><input [(ngModel)]="employee.id" value="0" readonly></td>
-    </tr>
-    <tr>
-        <td>email</td>
-        <td><input [(ngModel)]="employee.email"></td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td><input [(ngModel)]="employee.password" type="password"></td>
-    </tr>
-    <tr>
-        <td>Active?</td>
-        <td><input [(ngModel)]="employee.active" type="checkbox" checked></td>
-    </tr>
+<div class="headerContainer"><h2>Add new employee</h2></div>
+<div class="smMenuContainer">
+<table class="table table-dark table-sm">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="employee.id" value="0" readonly></td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td><input [(ngModel)]="employee.email"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]="employee.password" type="password"></td>
+        </tr>
+        <tr>
+            <td>Active?</td>
+            <td><input [(ngModel)]="employee.active" type="checkbox" checked></td>
+        </tr>
+    </tbody>
 </table>
-</div>
 <div class="buttonContainer">
     <button (click)="saveEmployee()">Save Employee</button>
 </div>
-<div><p>{{message}}</p></div>
+</div>
+<div class="messageContainer"><p>{{message}}</p></div>

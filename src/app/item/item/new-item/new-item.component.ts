@@ -22,10 +22,15 @@ export class NewItemComponent {
 
   }
   save(){
+    if (this.item.price < 0) {
+      this.message = "The price cannot be NEGATIVE!";
+      return;
+    }
     this.itemSvc.newItem(this.item).subscribe({
       next:(res) => {
         this.message = `Add item ${this.item.name} success!`;
         console.log(res);
+        this.router.navigate(['/item']);
       },
       error:(err) => {
         this.message = `Sorry something went wrong`;
