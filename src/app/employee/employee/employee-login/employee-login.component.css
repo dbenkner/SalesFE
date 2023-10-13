@@ -1,0 +1,25 @@
+.loginWrapper {
+    width: 100%;
+}
+.hw {
+    width: 100%;
+    text-align: center;
+}
+.loginContainer {
+    border-color: white;
+    border-style: ridge;
+    width: 400px;
+    margin:auto;
+}
+button {
+    margin-left:75%;
+}
+.log {
+    width: 100px;
+    display: inline-block;
+}
+.textLogCon {
+    margin:auto;
+    width: 50%;
+    padding:10px;
+}

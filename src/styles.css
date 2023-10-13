@@ -4,30 +4,6 @@ body {
     background-color: black;
     color:white;
 }
-.tableContainer {
-    display:flex;
-    width:100%s;
-    justify-content: center;
-}
-.titleContainer {
+.messageContainer {
     text-align: center;
-}
-.btnContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.wrapper {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-.smTableContainer {
-    width: 600px;
-    display: flex;
-    justify-content: center;
-    border: solid;
-    border-radius: 5px;
 }

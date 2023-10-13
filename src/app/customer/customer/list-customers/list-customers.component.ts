@@ -3,6 +3,8 @@ import { Customer } from '../../customer.class';
 import { CustomerService } from '../../customer.service';
 import { LoginService } from 'src/app/employee/login.service';
 import { Employee } from 'src/app/employee/employee-class';
+import { GlobalService } from 'src/app/global.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-customers',
@@ -16,7 +18,7 @@ export class ListCustomersComponent {
   substr: string = "";
   sortCol: string = "name"; // var for column name
   sortAsc: boolean = true; // sets sort to asc by default
-  employee!: Employee;
+  emp!: Employee;
   sortOrder(col:string): void {
     if(col == this.sortCol) {
       this.sortAsc = !this.sortAsc; //flips the bool
@@ -27,11 +29,13 @@ export class ListCustomersComponent {
   }
   constructor(
     private custSvc: CustomerService,
-    private logInSvc: LoginService
+    private globalSvc: GlobalService,
+    private router: Router
   ) {}
   ngOnInit() {
     this.message = "";
-    this.employee = this.logInSvc.loggedIn;
+    this.globalSvc.checkForLoggedIn();
+    this.emp = this.globalSvc.loggedInEmployee;
     this.custSvc.list().subscribe({
       next: (res) => {
         console.log(res);

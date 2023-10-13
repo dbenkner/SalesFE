@@ -1,0 +1,51 @@
+<app-menu></app-menu>
+<h1 class="Header">Order Lines</h1>
+
+<div class ="olinesTabContainer">
+    <table class="table table-dark table-sm" *ngIf="order">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Customer</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{order.id}}</td>
+                    <td>{{order.description}}</td>
+                    <td>{{order.status}}</td>
+                    <td>{{order.total | currency}}</td>
+                    <td>{{order.customer.name}}</td>
+                    <td><button (click)="backOrder()" class="btn btn-dark btn-sm">Back Order</button>
+                    <button button (click)="okOrder()" class="btn btn-dark btn-sm">Approve</button></td>
+                </tr>
+        </tbody>
+    </table>
+    <a routerLink="/orderline/add/{{order.id}}">Create New</a> <!-- Order ID for new Orderline! -->
+    <table class="table table-dark table-sm table-striped" *ngIf="order">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Item</th>       
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ol of order.orderlines">
+                <td>{{ol.id}}</td>
+                <td>{{ol.item?.name}}</td>
+                <td>{{ol.quantity}}</td>
+                <td>{{ol.item?.price | currency}}</td>
+                <td>{{ol.quantity * ol.item?.price! | currency}}</td>
+                <td>Actions</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

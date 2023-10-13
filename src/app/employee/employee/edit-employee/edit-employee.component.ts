@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employee } from '../../employee-class';
 import { EmployeeService } from '../../employee.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-edit-employee',
@@ -16,9 +17,12 @@ export class EditEmployeeComponent {
     private empSvc: EmployeeService,
     private route: ActivatedRoute,
     private routerLink: RouterLink,
-    private router: Router
+    private router: Router,
+    private globalSvc: GlobalService
   ){}
-  ngOnInit(){
+  ngOnInit() {
+    this.globalSvc.checkForLoggedIn();
+    this.employee = this.globalSvc.loggedInEmployee;
     this.route.params.subscribe({
       next: (params) => {
         this.id = params['id'];

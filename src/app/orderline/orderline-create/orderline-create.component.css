@@ -1,0 +1,27 @@
+.messageContainer{
+    width: 100%;
+    text-align: center;
+}
+.wrapper{
+    display: inline;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.olContainer{
+    width:400px;
+    border-style: solid;
+    padding-top: 10px;
+    border-radius: 10px;
+    margin:auto
+}
+.btnContainer{
+    margin-left: 80%;
+    margin-top: 10px;
+}
+table{
+    margin:auto;
+}
+.titleContainer {
+    text-align: center;
+}

@@ -3,6 +3,7 @@ import { Employee } from '../../employee-class';
 import { LoginService } from '../../login.service';
 import { EmployeeService } from '../../employee.service';
 import { GlobalService } from 'src/app/global.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-login',
@@ -11,17 +12,24 @@ import { GlobalService } from 'src/app/global.service';
 })
 export class EmployeeLoginComponent {
   employee: Employee = new Employee();
+  message: string ="";
   constructor(
     private empSvc: EmployeeService,
-    private globalSvc: GlobalService
+    private globalSvc: GlobalService,
+    private router: Router
   ){}
   logIn(){
+    this.globalSvc.loggedInEmployee = null;
     this.empSvc.employeeLogIn(this.employee.email, this.employee.password).subscribe({
       next: (res) => {
-        console.log(res);
         this.globalSvc.loggedInEmployee = res;
+
+        this.router.navigate(['/home']);
       },
       error: (err) => {
+        if (err.status === 404) {
+          this.message = "Not Found! Log on failed!";  
+        }
         console.error(err);
       }
     });

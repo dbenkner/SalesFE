@@ -1,0 +1,10 @@
+.createTableContainer {
+    width: 350px;
+    border:solid;
+    padding: 10px;
+    border-radius: 10px;
+    margin:auto;
+}
+.butSpanLeft {
+    margin-left: 80%;
+}

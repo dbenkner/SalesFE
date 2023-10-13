@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<h1>List Orders</h1>
+<div>
+    <div><a routerLink="/order/new">New Order</a></div> | <input [(ngModel)]="substr" placeholder="Search" > 
+    <div class="tableContainer">
+        <table class="table table-dark table-striped">
+            <thead>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>CustomerId</th>
+                <th>Action?</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders | searchOrder:substr">
+                    <td>{{order.id}}</td>
+                    <td>{{order.date | date:'shortDate' }} </td>
+                    <td>{{order.status}}</td>
+                    <td>{{order.total |currency}}</td>
+                    <td>{{order.customer.name}}</td>
+                    <td><a routerLink="/order/{{order.id}}">Details</a> | <a routerLink="/order/edit/{{order.id}}">Edit</a> |<a routerLink="/order/line/{{order.id}}">Line</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>{{order.id}}</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>{{order.date | date:'shortDate'}}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{order.status}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{order.description}}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{order.total | currency}}</td>
+            </tr>
+            <tr>
+                <td>Customer</td>
+                <td>{{order.customer.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="deleteOrder()">Delete</button>
+</div>

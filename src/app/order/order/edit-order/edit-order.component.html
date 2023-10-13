@@ -1,0 +1,35 @@
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td><input [(ngModel)]="order.id" readonly></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input [(ngModel)]="order.date" type="date"></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><input [(ngModel)]="order.status"></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><input [(ngModel)]="order.description" ></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input [(ngModel)]="order.total" type="number" readonly></td>
+            </tr>
+            <tr>
+                <td>CustomerId</td>
+                <td><select [(ngModel)]="order.customerId">
+                    <option *ngFor="let x of customers" value={{x.id}}>{{x.name}}</option>
+                </select></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="save()">Save</button>
+</div>

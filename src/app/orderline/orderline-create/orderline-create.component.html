@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<router-outlet></router-outlet>
+<div class="wrapper">
+    <div class="titleContainer"><h1>Add Orderline</h1></div>
+    <div class="olContainer">
+        <table class="table table-dark">
+            <tr>
+                <td>Order ID</td>
+                <td><input [(ngModel)]="orderline.orderId" value="{{orderline.orderId}}" readonly></td>
+            </tr>
+            <tr>
+                <td>Item</td>
+                <td>
+                    <select [(ngModel)]="orderline.itemId">
+                        <option *ngFor="let item of items" value="{{item.id}}">
+                            {{item.name}}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td><input [(ngModel)]="orderline.quantity" type="number"></td>
+            </tr>
+        </table>
+        <div class="btnContainer"><button (click)="save()">Save</button></div>
+    </div>
+    <div class="messageContainer">
+        {{message}}
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Menu } from '../menu.class';
 import { LoginService } from 'src/app/employee/login.service';
 import { Employee } from 'src/app/employee/employee-class';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,14 +15,14 @@ export class MenuComponent {
     new Menu("ABOUT", "/about"),
     new Menu("CUSTOMERS", "/customer/list"),
     new Menu("EMPLOYEES", "/employee/list"),
-    new Menu("LOGIN", "/login")
+    new Menu("LOGIN", "/login"),
+    new Menu("ORDER", "/order")
   ];
   loggedIn!: Employee;
   constructor(
-    private logSvc: LoginService
+    private globalSvc: GlobalService
   ) {}
   ngOnInit() {
-    this.loggedIn = this.logSvc.loggedIn;
-    console.log(this.loggedIn.id);
+
   }
 }

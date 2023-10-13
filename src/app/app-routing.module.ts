@@ -12,9 +12,16 @@ import { DetailEmployeeComponent } from './employee/employee/detail-employee/det
 import { NewEmployeeComponent } from './employee/employee/new-employee/new-employee.component';
 import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-employee.component';
 import { EmployeeLoginComponent } from './employee/employee/employee-login/employee-login.component';
+import { CreateOrderComponent } from './order/order/create-order/create-order.component';
+import { ListOrdersComponent } from './order/order/list-orders/list-orders.component';
+import { EditOrderComponent } from './order/order/edit-order/edit-order.component';
+import { DetailOrderComponent } from './order/order/detail-order/detail-order.component';
+import { OrderLinesComponent } from './order/order/order-lines/order-lines.component';
+import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
+
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch:'full'},
+  {path: '', redirectTo: '/login', pathMatch:'full'},
   {path: 'home', component:HomeComponent},
   {path: 'customer', component:CustomerComponent},
   {path: 'employee', component:EmployeeComponent},
@@ -26,6 +33,13 @@ const routes: Routes = [
   {path: 'customer/:id', component:DetailCustomerComponent},
   {path: 'customer/edit/:id', component:EditCustomerComponent},
   {path: 'employee/edit/:id', component:EditEmployeeComponent},
+  {path: 'order' , component:ListOrdersComponent},
+  {path: 'order/new', component:CreateOrderComponent},
+  {path: 'order/edit/:id', component:EditOrderComponent},
+  {path: 'order/:id', component:DetailOrderComponent},
+  {path: 'order/line/:id', component:OrderLinesComponent},
+  //orderlines
+  {path: 'orderline/add/:oid', component:OrderlineCreateComponent}, //pass in order ID NOT olID
   {path: 'login', component:EmployeeLoginComponent}
 ];
 

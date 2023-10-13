@@ -24,6 +24,14 @@ import { EditEmployeeComponent } from './employee/employee/edit-employee/edit-em
 import { SortPipe } from './misc/sort.pipe';
 import { EmployeeLoginComponent } from './employee/employee/employee-login/employee-login.component';
 import { LoginService } from './employee/login.service';
+import { OrderComponent } from './order/order/order.component';
+import { CreateOrderComponent } from './order/order/create-order/create-order.component';
+import { ListOrdersComponent } from './order/order/list-orders/list-orders.component';
+import { EditOrderComponent } from './order/order/edit-order/edit-order.component';
+import { DetailOrderComponent } from './order/order/detail-order/detail-order.component';
+import { SearchOrderPipe } from './order/search-order.pipe';
+import { OrderLinesComponent } from './order/order/order-lines/order-lines.component';
+import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +54,14 @@ import { LoginService } from './employee/login.service';
     EditEmployeeComponent,
     SortPipe,
     EmployeeLoginComponent,
+    OrderComponent,
+    CreateOrderComponent,
+    ListOrdersComponent,
+    EditOrderComponent,
+    DetailOrderComponent,
+    SearchOrderPipe,
+    OrderLinesComponent,
+    OrderlineCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +70,6 @@ import { LoginService } from './employee/login.service';
     HttpClientModule
   ],
   providers: [Router],
-  bootstrap: [AppComponent, LoginService]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
