@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +37,11 @@ import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edi
 import { OrderlineDeleteComponent } from './orderline/orderline-delete/orderline-delete.component';
 import { EditItemComponent } from './item/item/edit-item/edit-item.component';
 import { DetailItemComponent } from './item/item/detail-item/detail-item.component';
+import { AppInitService } from './app-init.service';
+
+export const startupServiceFactory = (appInit: AppInitService) => {
+  return () => appInit.getsettings();
+}
 
 @NgModule({
   declarations: [
@@ -79,7 +84,14 @@ import { DetailItemComponent } from './item/item/detail-item/detail-item.compone
     FormsModule,
     HttpClientModule
   ],
-  providers: [Router],
+  providers: [
+    AppInitService, {
+      provide : APP_INITIALIZER,
+      useFactory: startupServiceFactory,
+      deps: [AppInitService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

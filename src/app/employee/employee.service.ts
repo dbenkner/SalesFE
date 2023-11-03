@@ -2,14 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from './employee-class';
 import { Observable } from 'rxjs';
+import { AppInitService } from '../app-init.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  url:string = "http://localhost:5555/api/employees"
+  get url() { return `${this.init.config.baseurl}/api/employees`}
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private init: AppInitService
   ) { }
   list(): Observable<Employee[]> {
     return this.http.get(this.url) as Observable<Employee[]>;
